@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+<body>
+
+    <!-- Top Nav -->
+    <div class="top-nav">
+        Food Tracker
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Welcome {username}!</h2>
+    </div>
+
+    <div class="carousel-section">
+    <h3>Popular actions</h3>
+    <div class="carousel">
+        <div class="card">
+            <a th:href="@{/item/add}">Add an item</a>
+        </div>
+        <div class="card">
+            <a th:href="@{/pantry}">View my pantry</a>
+        </div>
+        <div class="card">
+            <a th:href="@{/item/add}">Delete an item</a>
+        </div>
+        <div class="card">
+            <a th:href="@{/list}">View Shopping list</a>
+        </div>
+    </div>
+    </div>
+
+    <!-- Bottom Nav -->
+    <div class="bottom-nav">
+        <a th:href="@{/}">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a th:href="@{/pantry}">
+            <i class="fas fa-warehouse"></i>
+            Pantry
+        </a>
+        <a th:href="@{/list}">
+            <i class="fas fa-list"></i>
+            List
+        </a>
+    </div>
+
+</body>
+</html>
+

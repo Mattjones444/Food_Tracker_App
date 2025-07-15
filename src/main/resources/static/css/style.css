@@ -1,0 +1,110 @@
+:root {
+    --dark: #1F2421;
+    --deep-green: #216869;
+    --primary-green: #49A087;
+    --light-green: #9CC5A1;
+    --soft-grey: #DCE1DE;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 60px;
+    font-family: Arial, sans-serif;
+    background-color: var(--soft-grey);
+    color: var(--dark);
+}
+
+/* Top nav */
+.top-nav {
+    background-color: var(--deep-green);
+    color: var(--soft-grey);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Bottom nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--light-green);
+    border-top: 1px solid var(--primary-green);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+.bottom-nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-nav i {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.carousel-section {
+    margin: 1rem;
+}
+
+.carousel-section h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #216869;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;               
+}
+
+.card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: #9CC5A1;
+    color: #1F2421;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
