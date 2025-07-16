@@ -10,6 +10,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "item_id")
     private long id;
 
     //Many user items can belong to one user
@@ -17,16 +18,11 @@ public class Item {
     @JoinColumn(name = "user_id",nullable=false)
     private User user;
 
-    //Many users can link to one item
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "item_id", nullable=false)
-    private Item item;
-
     @Column(nullable=false, unique=true)
     private String name;
 
     @Column(nullable=false, unique=false)
-    private int quantity;
+    private String quantity;
 
     @Column(nullable=false, unique=false)
     private boolean finished;
@@ -34,16 +30,15 @@ public class Item {
     @Column(nullable=false, unique=false)
     private Type type;
 
-    @Column(nullable=false, unique=false)
+    @Column(name = "last_bought", nullable = false)
     private LocalDate lastBought;
 
     public Item(){}
 
-    public Item(long id, User user, Item item, String name, int quantity, boolean finished, Type type,
+    public Item(long id, User user, Item item, String name, String quantity, boolean finished, Type type,
             LocalDate lastBought) {
         this.id = id;
         this.user = user;
-        this.item = item;
         this.name = name;
         this.quantity = quantity;
         this.finished = finished;
@@ -67,14 +62,6 @@ public class Item {
         this.user = user;
     }
 
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
     public String getName() {
         return name;
     }
@@ -83,11 +70,11 @@ public class Item {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
